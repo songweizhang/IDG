@@ -2,21 +2,27 @@
 
 from selenium import webdriver
 import time
+from CommonFunc import CommonFuncs
+
+# 显式等待
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
 '''
     User: chenwei
-    Date: 20170326 -> 20170420
-    Func: auto_test_中台
+    Date: 20170326 -> 20170509
+    Func: auto_test_IDG
 '''
 
 # "我的应用"的下面
-appid = "1"
+appid = "123456"
 appkey = "orhudjjat82bea3yysfowcsexhni0mpu"
 appsecret = "skn9yz7uxi4xfpyh6ahbenawjvdwqjco"
 
 all_h, cur_h = '', ''   # 窗口的标签handler
 cur_service_k = 0       # 当前测的是第几个服务(admin是第一个)
-service_num = 26        # 总共26个服务
+service_num = 28        # 总共28个服务
 
 
 # 点击登录按钮, 调用login方法
@@ -33,6 +39,7 @@ def click_login():
 
 # 输入账户、密码, 点击按钮, 弹出"创建应用"对话框
 def login():
+    print ">>>测试登陆",
     time.sleep(1)
     driver.find_element_by_name("username").send_keys("chenwei")
     time.sleep(1)
@@ -42,15 +49,24 @@ def login():
 
     driver.switch_to.window(driver.window_handles[0])
 
+    print " ...ok"
     time.sleep(1)
     # 这边应该调用create_platform(), 应为不要创建太多平台(暂时不能删除), 所以先注释掉, 直接调create_app方法
-    #create_platform()
+
+    create_platform()
     #app_operate()
-    app_service()
+    #app_service()
+
+
+# 登出
+def login_out():
+    time.sleep(2)
+    driver.find_element_by_css_selector('#wrapper > nav > div.options.options-right > ul > li:nth-child(3) > a').click()
 
 
 # 创建应用平台
 def create_platform():
+    print ">>>测试创建应用平台",
     driver.find_element_by_id("create").click()
 
     time.sleep(1)
@@ -60,13 +76,15 @@ def create_platform():
     time.sleep(1)
     driver.find_element_by_css_selector("#add_platform .modal-footer .btn-default").click()
     #driver.find_element_by_css_selector("#add_platform .modal-footer .btn-primary").click()
+    print " ...ok"
 
-    time.sleep(1)
     create_app()
 
 
 # 创建应用
 def create_app():
+    print ">>>测试创建应用",
+    time.sleep(2)
     driver.find_element_by_css_selector(".cards .card-new:last-child").click()
 
     time.sleep(2)
@@ -85,12 +103,14 @@ def create_app():
     # .代表class #代表id
     #driver.find_element_by_css_selector("#create_app .modal-footer .btn-primary").click()
     driver.find_element_by_css_selector("#create_app .modal-footer .btn-default").click()
+    print " ...ok"
 
     app_enter_official()
 
 
 # "我的应用"->进入官网
 def app_enter_official():
+    print ">>>测试进入官网",
     # 此时在主界面, 停顿2秒
     time.sleep(2)
     # 根据AppKey找到"进入官网"这个按钮, 点击
@@ -102,13 +122,17 @@ def app_enter_official():
 
     # (1)就代表开发
     driver.find_element_by_css_selector("a[href*=" + appkey + "].bt:nth-child(1)").click()
+    print " ...ok"
+
     app_develop()
     app_operate()
 
 
 # "我的应用"->"开发"
 def app_develop():
-    time.sleep(2)
+    print ">>>测试开发",
+    # 新建接口->Name
+    time.sleep(1)
     driver.find_element_by_id("title").send_keys("interface_test")
 
     time.sleep(1)
@@ -122,6 +146,7 @@ def app_develop():
         4. >又表示子元素
         5. li下面有一个子元素叫做a标签
     '''
+    # pathOps > li:nth-child(1) > a
     driver.find_element_by_css_selector("#pathOps > li:nth-child(2) > a:nth-child(1)").click()
 
     time.sleep(1)
@@ -150,11 +175,10 @@ def app_develop():
     driver.find_element_by_id("radio_required_no").click()
 
     time.sleep(1)
-    driver.find_element_by_id("modal_param_schema").find_element_by_xpath("//option[@value='number']").click()
+    #driver.find_element_by_id("modal_param_schema").find_element_by_xpath("//option[@value='boolean']").click()
 
-    time.sleep(3)
+    time.sleep(2)
     # 创建一个接口
-    # driver.find_element_by_css_selector("#edit_param_modal .modal-footer .btn-default").click()
     driver.find_element_by_css_selector("#edit_param_modal .modal-footer .btn-primary").click()
 
     time.sleep(2)
@@ -175,12 +199,15 @@ def app_develop():
     # 暂停1s, 返回主界面, 测试运营
     time.sleep(1)
     driver.back()
+    print " ...ok"
 
 
 # "我的应用"->"运营"
 def app_operate():
+    print ">>>测试运营",
     time.sleep(1)
     driver.find_element_by_css_selector("a[href*="+appkey+"].bt:nth-child(2)").click()
+    print " ...ok"
 
     # "运营" 界面, 添加一个channel、"正常渠道"、"已经用渠道"、"基础配置"、"禁用", 最后是 "返回"按钮的测试
     time.sleep(1)
@@ -189,6 +216,7 @@ def app_operate():
 
 # "我的应用"->"运营"->"正常渠道"->"正常渠道"(有两个标签, 正常渠道+已禁用渠道)
 def add_channel():
+    print ">>>测试'新增渠道'",
     time.sleep(1)
     '''
         1. [], 中括号, 里面跟的是属性, 如href、data-target
@@ -203,46 +231,56 @@ def add_channel():
     time.sleep(1)
     driver.find_element_by_css_selector('#add_channel .modal-dialog .modal-content .modal-body .form-group [name="owner_name"]').send_keys("owner_test")
 
+    phone_num = int(commonfunc.read_file('PhoneNum.txt')) + 1
+    commonfunc.write_file('PhoneNum.txt', str(phone_num))
+
     time.sleep(1)
-    driver.find_element_by_css_selector('#add_channel .modal-dialog .modal-content .modal-body .form-group [name="owner"]').send_keys("18168424728")
+    driver.find_element_by_css_selector('#add_channel .modal-dialog .modal-content .modal-body .form-group [name="owner"]').send_keys(str(phone_num))
 
     # 监测手机号
     time.sleep(1)
     driver.find_element_by_id('check_phone').click()
 
-    time.sleep(3)
+    time.sleep(2)
     #driver.find_element_by_css_selector('#add_channel .modal-dialog .modal-content .modal-footer .btn-default').click()
     driver.find_element_by_css_selector('#add_channel .modal-dialog .modal-content .modal-footer .btn-primary').click()
 
     time.sleep(1)
+    print " ...ok"
+
     delete_channel()
 
 
 # "我的应用"->"运营"->"禁用"
 def delete_channel():
+    print ">>>测试'删除渠道'",
     time.sleep(1)
-    driver.find_element_by_css_selector("table tr:nth-child(2) td:last-child .btn-danger").click()
+    driver.find_element_by_css_selector("#channel_table > tbody > tr > td:nth-child(5) > a.btn.btn-danger.btn-xs").click()
     time.sleep(1)
     driver.find_element_by_css_selector("#block_channel .modal-dialog .modal-content .modal-body .form-group .form-control").send_keys("just a test")
 
     time.sleep(1)
-    # driver.find_element_by_css_selector('#block_channel .modal-dialog .modal-content .modal-footer .btn-default').click()
     driver.find_element_by_css_selector('#block_channel .modal-dialog .modal-content .modal-footer .btn-primary').click()
 
+    print " ...ok"
     # 禁用之后, 到"已禁用渠道"里面去查看
+
     already_deleted_channel()
 
 
 # "我的应用"->"运营"->"已禁用渠道"
 def already_deleted_channel():
+    print ">>>测试'已禁用渠道'",
     time.sleep(1)
     driver.find_element_by_css_selector('ul.nav:nth-child(1) > li:nth-child(2) > a:nth-child(1)').click()
+    print " ...ok"
 
     basic_config()
 
 
 # "我的应用"->"运营"->"基础配置"
 def basic_config():
+    print ">>>测试'基础配置'",
     time.sleep(1)
     driver.find_element_by_css_selector("[data-target='#edit_config']").click()
 
@@ -257,6 +295,8 @@ def basic_config():
     driver.find_element_by_css_selector('a[href="main.php?action=index.html"].btn-default').click()
 
     time.sleep(1)
+    print " ...ok"
+
     app_service()
 
 
@@ -284,7 +324,7 @@ def test_next_service():
     time.sleep(1)
     app_service_api_list()
     # swagger文档打开时间比较长, 所以停了8s后将其关闭
-    time.sleep(3)
+    time.sleep(5)
     close_label()
 
     # "服务配置"是第3个按钮
@@ -368,38 +408,50 @@ def test_next_service():
         app_service_service_config19()
         print " ...ok"
     elif cur_service_k == 20:
-        print ">>>" + str(cur_service_k) + " 测试top bar服务",
+        print ">>>" + str(cur_service_k) + " 测试cidata服务",
         app_service_service_config20()
         print " ...ok"
     elif cur_service_k == 21:
-        print ">>>" + str(cur_service_k) + " 测试论坛服务",
+        print ">>>" + str(cur_service_k) + " 测试top bar服务",
         app_service_service_config21()
         print " ...ok"
     elif cur_service_k == 22:
-        print ">>>" + str(cur_service_k) + " 测试会员服务",
+        print ">>>" + str(cur_service_k) + " 测试论坛服务",
         app_service_service_config22()
         print " ...ok"
     elif cur_service_k == 23:
-        print ">>>" + str(cur_service_k) + " 测试互动直播服务",
+        print ">>>" + str(cur_service_k) + " 测试会员服务",
         app_service_service_config23()
         print " ...ok"
     elif cur_service_k == 24:
-        print ">>>" + str(cur_service_k) + " 测试商品服务",
+        print ">>>" + str(cur_service_k) + " 测试互动直播服务",
         app_service_service_config24()
         print " ...ok"
     elif cur_service_k == 25:
-        print ">>>" + str(cur_service_k) + " 测试orders服务",
+        print ">>>" + str(cur_service_k) + " 测试商品服务",
         app_service_service_config25()
         print " ...ok"
     elif cur_service_k == 26:
-        print ">>>" + str(cur_service_k) + " 测试edu_admin服务",
+        print ">>>" + str(cur_service_k) + " 测试orders服务",
         app_service_service_config26()
         print " ...ok"
+    elif cur_service_k == 27:
+        print ">>>" + str(cur_service_k) + " 测试edu_admin服务",
+        app_service_service_config27()
+        print " ...ok"
+    elif cur_service_k == 28:
+        print ">>>" + str(cur_service_k) + " 测试race服务",
+        app_service_service_config28()
+        print " ...ok"
 
-    # service_num是服务总量, 总共26个服务
+    # service_num是服务总量, 总共28个服务
     if cur_service_k < service_num:
+        #pass
         test_next_service()
     else:
+        print " ...ok"
+        login_out()
+        time.sleep(5)
         quit_firefox()
 
 
@@ -495,75 +547,276 @@ def app_service_service_config2():
     driver.find_element_by_css_selector('#page-wrapper > div:nth-child(1) > div > h1 > div > a').click() # 返回按钮
 
 
-# 支付
+# 支付服务
 def app_service_service_config3():
-    # 移动App
+    # 接入首页
     time.sleep(1)
-    driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul > li:nth-child(1) > a').click()
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(1) > a').click()
 
+    # 参数配置->服务商配置
     time.sleep(1)
-    driver.find_element_by_css_selector('.table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(4) > a:nth-child(1)').click()
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul > li:nth-child(5) > a').click()
 
-    # 编辑
+    # 参数配置->服务商配置->查看
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div.panel-body > div > table > tbody:nth-child(2) > tr > td:nth-child(5) > button').click()
+
+    # 参数配置->服务商配置->查看->编辑
     time.sleep(1)
     driver.find_element_by_css_selector('#page-wrapper > div:nth-child(2) > div.col-lg-6 > form > a').click()
 
+    # 参数配置->服务商配置->服务商名称
     time.sleep(1)
-    driver.find_element_by_css_selector('#app_id').clear()
-    driver.find_element_by_css_selector('#app_id').send_keys('2')
+    driver.find_element_by_css_selector('#wxName').clear()
+    driver.find_element_by_css_selector('#wxName').send_keys('name')
 
+    # 参数配置->服务商配置->应用APP ID
     time.sleep(1)
-    driver.find_element_by_css_selector('#alipayRSA').clear()
-    driver.find_element_by_css_selector('#alipayRSA').send_keys('2')
+    driver.find_element_by_css_selector('#wxAppID').clear()
+    driver.find_element_by_css_selector('#wxAppID').send_keys('123456')
 
+    # 参数配置->服务商配置->微信支付商户号
     time.sleep(1)
-    driver.find_element_by_css_selector('#alipayKey').clear()
-    driver.find_element_by_css_selector('#alipayKey').send_keys('2')
+    driver.find_element_by_css_selector('#wxPayNum').clear()
+    driver.find_element_by_css_selector('#wxPayNum').send_keys('abcdefg')
 
-    # 编辑后, 提交按钮
+    # 参数配置->服务商配置->微信支付API密钥
     time.sleep(1)
-    driver.find_element_by_css_selector('.btn').click()
+    driver.find_element_by_css_selector('#wxAppSecret').clear()
+    driver.find_element_by_css_selector('#wxAppSecret').send_keys('helloworld1')
 
-    # 弹出框, 接受
+    # 参数配置->服务商配置->商户证书
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppCert').clear()
+    driver.find_element_by_css_selector('#wxAppCert').send_keys('helloworld2')
+
+    # 参数配置->服务商配置->证书密钥
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppCertSecret').clear()
+    driver.find_element_by_css_selector('#wxAppCertSecret').send_keys('helloworld3')
+
+    # 参数配置->服务商配置->提交
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_wx > button').click()
+
     time.sleep(1)
     driver.switch_to.alert.accept()
 
-    # 未开通的
+    # 参数配置->移动app
     time.sleep(1)
-    driver.find_element_by_css_selector('#page-wrapper > div.panel-body > div > table > tbody > tr:nth-child(2) > td:nth-child(5) > button').click()
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul > li:nth-child(1) > a').click()
 
+    # 参数配置->移动app->微信APP支付->编辑
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div.panel-body > div > table > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(5) > button').click()
+
+    # 参数配置->移动app->微信APP支付->编辑->应用APP ID
     time.sleep(1)
     driver.find_element_by_css_selector('#wxAppID').clear()
-    driver.find_element_by_css_selector('#wxAppID').send_keys('3')
+    driver.find_element_by_css_selector('#wxAppID').send_keys('123456')
 
+    # 参数配置->移动app->微信APP支付->编辑->微信支付商户号
     time.sleep(1)
     driver.find_element_by_css_selector('#wxPayNum').clear()
-    driver.find_element_by_css_selector('#wxPayNum').send_keys('3')
+    driver.find_element_by_css_selector('#wxPayNum').send_keys('123456')
 
+    # 参数配置->移动app->微信APP支付->编辑->特约商户
+    time.sleep(1)
+    driver.find_element_by_css_selector('#radio_service').click()
+
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxServiceProvider').find_element_by_xpath("//option[@value='1']").click()
+
+    # 参数配置->移动app->微信APP支付->编辑->普通商户
+    time.sleep(1)
+    driver.find_element_by_css_selector('#radio_normal').click()
+
+    # 参数配置->移动app->微信APP支付->编辑->微信支付api密钥
     time.sleep(1)
     driver.find_element_by_css_selector('#wxAppSecret').clear()
-    driver.find_element_by_css_selector('#wxAppSecret').send_keys('3')
+    driver.find_element_by_css_selector('#wxAppSecret').send_keys('123456')
 
+    # 参数配置->移动app->微信APP支付->编辑->商户证书
     time.sleep(1)
     driver.find_element_by_css_selector('#wxAppCert').clear()
-    driver.find_element_by_css_selector('#wxAppCert').send_keys('3')
+    driver.find_element_by_css_selector('#wxAppCert').send_keys('123456')
 
+    # 参数配置->移动app->微信APP支付->编辑->证书密钥
     time.sleep(1)
     driver.find_element_by_css_selector('#wxAppCertSecret').clear()
-    driver.find_element_by_css_selector('#wxAppCertSecret').send_keys('3')
+    driver.find_element_by_css_selector('#wxAppCertSecret').send_keys('123456')
 
-    # 提交
+    # 参数配置->移动app->微信APP支付->编辑->提交
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_wx > button').click()
+
+    time.sleep(1)
+    driver.switch_to.alert.accept()
+
+    # accept之后, 没有回到xx界面, 需要手动点一下“移动wap”
+    # 参数配置->移动wap
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul > li:nth-child(2) > a').click()
+
+    # 参数配置->移动wap->支付宝手机网站支付支付->编辑
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div.panel-body > div > table > tbody:nth-child(2) > tr > td:nth-child(5) > button').click()
+
+    # 参数配置->移动wap->支付宝手机网站支付支付->编辑->应用ID
+    time.sleep(1)
+    driver.find_element_by_css_selector('#app_id').clear()
+    driver.find_element_by_css_selector('#app_id').send_keys('123456')
+
+    # 参数配置->移动wap->支付宝手机网站支付支付->编辑->商户RSA私钥（PKCS8格式)
+    time.sleep(1)
+    driver.find_element_by_css_selector('#alipayRSA').clear()
+    driver.find_element_by_css_selector('#alipayRSA').send_keys(u'商户RSA私钥')
+
+    # 参数配置->移动wap->支付宝手机网站支付支付->编辑->支付宝公钥
+    time.sleep(1)
+    driver.find_element_by_css_selector('#alipayKey').clear()
+    driver.find_element_by_css_selector('#alipayKey').send_keys(u'支付宝公钥')
+
+    # 参数配置->移动wap->支付宝手机网站支付支付->编辑->提交
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_add_alipay > button').click()
+
+    time.sleep(1)
+    driver.switch_to.alert.accept()
+
+    # 参数配置->微信公众号
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul > li:nth-child(3) > a').click()
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->编辑
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div.panel-body > div > table > tbody:nth-child(2) > tr > td:nth-child(5) > button').click()
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->应用ID
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppID').clear()
+    driver.find_element_by_css_selector('#wxAppID').send_keys('123456')
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->微信支付商户号
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxPayNum').clear()
+    driver.find_element_by_css_selector('#wxPayNum').send_keys('123456')
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->特约商户
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_wx > div:nth-child(3) > div > label:nth-child(2)').click()
+
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_wx > div:nth-child(3) > div > label:nth-child(1)').click()
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->微信支付API密钥
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppSecret').clear()
+    driver.find_element_by_css_selector('#wxAppSecret').send_keys('abcdefg')
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->商户证书
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppCert').clear()
+    driver.find_element_by_css_selector('#wxAppCert').send_keys('abcdefg')
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->证书密钥
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wxAppCertSecret').clear()
+    driver.find_element_by_css_selector('#wxAppCertSecret').send_keys('abcdefg')
+
+    # 参数配置->微信公众号->微信公众号支付/企业打款->提交
+    time.sleep(1)
+    driver.find_element_by_css_selector('#form_wx > button').click()
+
+    time.sleep(1)
+    driver.switch_to.alert.accept()
+
+    # 数据分析->交易额
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(4) > ul > li:nth-child(1) > a').click()
+
+    # 数据分析->交易量
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(4) > ul > li:nth-child(2) > a').click()
+
+    # 数据分析->转化率
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(4) > ul > li:nth-child(3) > a').click()
+
+    # 企业打款->企业打款
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(5) > ul > li:nth-child(1) > a').click()
+
+    # 企业打款->企业打款->打款指南
 #    time.sleep(1)
-#    driver.find_element_by_css_selector('#form_wx > button').click()
+#    driver.find_element_by_css_selector('#page1 > div.pull-right > button').click()
 
-    # TODO: back to list, 返回的是我的应用那个界面, 需要再进一级
-    time.sleep(2)
-    driver.find_element_by_css_selector('.header-brand > span:nth-child(2)').click()
+    # 企业打款->企业打款->打款指南->确定
+#    time.sleep(1)
+#    driver.find_element_by_css_selector('#myModal4 > div > div > div.modal-footer > div > button').click()
+
+    # 企业打款->企业打款->业务转账单号
+    time.sleep(1)
+    driver.find_element_by_css_selector('#transferId').clear()
+    driver.find_element_by_css_selector('#transferId').send_keys('123456')
+
+    # 企业打款->企业打款->收款账户OpenID
+    time.sleep(1)
+    driver.find_element_by_css_selector('#openId').clear()
+    driver.find_element_by_css_selector('#openId').send_keys('123456')
+
+    # 企业打款->企业打款->姓名校验（不校验姓名）
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page1 > div.row > div > form > div:nth-child(4) > div:nth-child(4) > label').click()
+
+    # 企业打款->企业打款->如选择校验姓名，请填写收款人真实姓名
+    time.sleep(1)
+    driver.find_element_by_css_selector('#targetName').clear()
+    driver.find_element_by_css_selector('#targetName').send_keys(u'陈维')
+
+    # 企业打款->企业打款->转账金额
+    time.sleep(1)
+    driver.find_element_by_css_selector('#amount').clear()
+    driver.find_element_by_css_selector('#amount').send_keys('5000')
+
+    # 企业打款->企业打款->转账描述
+    time.sleep(1)
+    driver.find_element_by_css_selector('#transferDsc').clear()
+    driver.find_element_by_css_selector('#transferDsc').send_keys(u'这是一个转账描述信息')
+
+    # 企业打款->企业打款->创建交易
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page1 > div.row > div > form > button').click()
+
+    time.sleep(1)
+    driver.switch_to.alert.accept()
+
+    # 企业打款->打款查询->打款记录
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(5) > ul > li:nth-child(2) > a').click()
+
+    # 企业打款->打款查询->打款记录->所有打款状态
+    time.sleep(1)
+    driver.find_element_by_id('state').click()
+
+    # 企业打款->打款查询->打款记录->所有配置渠道
+    time.sleep(1)
+    driver.find_element_by_id('config_type').click()
+
+    # 企业打款->打款查询->打款记录->时间倒序显示
+    time.sleep(1)
+    driver.find_element_by_id('order_by').click()
+
+    # 联调工具->交易订单生成
+    time.sleep(1)
+    driver.find_element_by_css_selector('#side-menu > li:nth-child(6) > ul > li:nth-child(1) > a').click()
+
+    time.sleep(1)
+    driver.find_element_by_css_selector('#wrapper > nav > div.header > a').click()
 
     click_service_btn()
 
-
-# 实体表格服务, 暂时不管
+# 实体表格服务, 暂时不管, 听说不用测试
 def app_service_service_config4():
     time.sleep(1)
     driver.back()
@@ -589,44 +842,48 @@ def app_service_service_config5():
 
 # push
 def app_service_service_config6():
-    # 个推
+    # 基础配置->推送渠道选择->个推
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(1)').click()
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(1)').click()
 
-    # 极光
+    # 基础配置->推送渠道选择->极光
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(2)').click()
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(2)').click()
 
-    # 小米
+    # 基础配置->推送渠道选择->小米
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(3)').click()
 
-    # ios APNS选择
+    # 基础配置->ios APNS选择
     time.sleep(1)
     driver.find_element_by_css_selector('label.radio-inline:nth-child(2) > input:nth-child(1)').click()
 
-    # push 渠道配置(极光少, 选择极光)
+    # push 渠道配置(选择极光)
     time.sleep(1)
     driver.find_element_by_css_selector('div.row:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1)').click()
 
+    # AppKey
     time.sleep(1)
     driver.find_element_by_css_selector('#jiguang > div:nth-child(2) > input:nth-child(2)').clear()
     driver.find_element_by_css_selector('#jiguang > div:nth-child(2) > input:nth-child(2)').send_keys('123456')
 
+    # Master Secret
     time.sleep(1)
     driver.find_element_by_css_selector('#jiguang > div:nth-child(3) > input:nth-child(2)').clear()
     driver.find_element_by_css_selector('#jiguang > div:nth-child(3) > input:nth-child(2)').send_keys('123456')
 
-    # 选择IOS
+    # 应用平台, 选择IOS
     time.sleep(1)
     driver.find_element_by_css_selector('div.row:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1)').click()
+
+    # 应用包名
     time.sleep(1)
     driver.find_element_by_css_selector('#iOS > div:nth-child(2) > input:nth-child(2)').clear()
-    driver.find_element_by_css_selector('#iOS > div:nth-child(2) > input:nth-child(2)').send_keys('123456')
+    driver.find_element_by_css_selector('#iOS > div:nth-child(2) > input:nth-child(2)').send_keys('com.ci123.www')
 
     # 保存按钮
     time.sleep(1)
@@ -643,43 +900,43 @@ def app_service_service_config6():
     time.sleep(1)
     driver.find_element_by_css_selector('#side-menu > li:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)').click()
 
-    # 标题
+    # 推送通知->通知标题
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)').clear()
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)').send_keys('title')
 
-    # 通知内容
+    # 推送通知->通知内容
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(2) > textarea:nth-child(2)').clear()
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(2) > textarea:nth-child(2)').send_keys('notice_content')
 
-    # 透传内容
+    # 推送通知->透传内容
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(3) > textarea:nth-child(2)').clear()
     driver.find_element_by_css_selector('div.panel:nth-child(1) > div:nth-child(1) > div:nth-child(3) > textarea:nth-child(2)').send_keys('spread_content')
 
-    # 目标平台(IOS)
+    # 推送通知->目标平台(选择IOS)
     time.sleep(1)
     driver.find_element_by_css_selector('label.checkbox-inline:nth-child(3)').click()
 
-    # IOS 环境(测试环境)
+    # 推送通知->IOS环境(测试环境)
     time.sleep(1)
     driver.find_element_by_css_selector('#ios_sandbox > label:nth-child(3)').click()
 
-    # 目标用户类型
+    # 推送通知->目标用户类型->全部用户
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(2) > div:nth-child(1) > div:nth-child(3) > label:nth-child(3)').click()
 
-    # 目标用户ID/别名/Tag
+    # 推送通知->目标用户ID/别名/Tag
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(2) > div:nth-child(1) > div:nth-child(4) > input:nth-child(2)').clear()
     driver.find_element_by_css_selector('div.panel:nth-child(2) > div:nth-child(1) > div:nth-child(4) > input:nth-child(2)').send_keys('123456')
 
-    # 后续动作
+    # 推送通知->后续动作->打开指定页面
     time.sleep(1)
     driver.find_element_by_css_selector('div.form-group:nth-child(5) > label:nth-child(3)').click()
 
-    # 页面名称
+    # 推送通知->页面名称
     time.sleep(1)
     driver.find_element_by_css_selector('#open_page > input:nth-child(2)').clear()
     driver.find_element_by_css_selector('#open_page > input:nth-child(2)').send_keys('123456')
@@ -689,7 +946,7 @@ def app_service_service_config6():
     driver.find_element_by_css_selector('textarea.form-control:nth-child(4)').clear()
     driver.find_element_by_css_selector('textarea.form-control:nth-child(4)').send_keys('123456')
 
-    # 推送方式
+    # 推送方式, 选择即时
     time.sleep(1)
     driver.find_element_by_css_selector('div.panel:nth-child(3) > div:nth-child(1) > div:nth-child(1) > label:nth-child(3) > input:nth-child(1)').click()
 
@@ -870,7 +1127,9 @@ def app_service_service_config13():
 
 # 权限管理(不用管, 点一下就行了)
 def app_service_service_config14():
-    pass
+    # 弹出框
+    time.sleep(1)
+    driver.switch_to.alert.accept()
 
 
 # api-tool (和"我的应用->开发"是一样的, 直接调这个方法即可)
@@ -1022,8 +1281,111 @@ def app_service_service_config19():
     driver.switch_to.alert.accept()
 
 
-# top bar
+# ci data
 def app_service_service_config20():
+    # 概况->实时统计
+    #time.sleep(5)
+    #driver.find_element_by_css_selector('#realtimeSummary').click()
+
+    # 概况->实时统计->新增用户
+    time.sleep(6)
+    driver.find_element_by_css_selector('#body > div > div > div > div > ul > li.active > a').click()
+
+    # 概况->实时统计->时段累计日活
+    time.sleep(6)
+    driver.find_element_by_css_selector('#body > div > div > div > div > ul > li.active > a').click()
+
+    # 概况->整体趋势
+    time.sleep(6)
+    driver.find_element_by_css_selector('#trendSummary').click()
+
+    # 用户细查
+    time.sleep(6)
+    driver.find_element_by_css_selector('#userInsightQuery').click()
+
+    # 用户细查->输入框
+    time.sleep(3)
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(2) > div > div > input').clear()
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(2) > div > div > input').send_keys('123456')
+
+    # 用户细查->搜索按钮
+    time.sleep(2)
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(2) > div > div > div > button').click()
+
+    # 设置->自定义事件模板
+    time.sleep(5)
+    driver.find_element_by_css_selector('#customEventTemplate').click()
+
+    # 设置->自定义事件模板->添加模板
+    time.sleep(5)
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(3) > div > div > div.panel-heading > button').click()
+
+    # 设置->自定义事件模板->添加模板->事件ID
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(1) > div > div > input').clear()
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(1) > div > div > input').send_keys('123456')
+
+    # 设置->自定义事件模板->添加模板->标题模板
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').clear()
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').send_keys('title')
+
+    # 设置->自定义事件模板->添加模板->详情模板
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(3) > div > div > textarea').clear()
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(3) > div > div > textarea').send_keys('description')
+
+    # 设置->自定义事件模板->添加模板->确定
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__footer > span > button.el-button.el-button--primary').click()
+
+    # 设置->自定义事件模板->编辑按钮
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(3) > div > div > div.panel-body > div > div.el-table__body-wrapper > table > tbody > tr > td.el-table_1_column_10 > div > button.el-button.el-button--primary.el-button--small').click()
+
+    # 设置->自定义事件模板->编辑模板->标题模板
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').clear()
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(2) > div > div > input').send_keys('title2')
+
+    # 设置->自定义事件模板->编辑模板->详情模板
+    time.sleep(1)
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(3) > div > div > textarea').clear()
+    driver.find_element_by_css_selector(
+        '#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__body > form > div:nth-child(3) > div > div > textarea').send_keys('description2')
+
+    # 设置->自定义事件模板->编辑模板->确定按钮
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(4) > div > div > div.el-dialog__footer > span > button.el-button.el-button--primary').click()
+
+    # 设置->自定义事件模板->删除按钮
+    time.sleep(1)
+    driver.find_element_by_css_selector('#page-wrapper > div > div:nth-child(3) > div > div > div.panel-body > div > div.el-table__body-wrapper > table > tbody > tr > td.el-table_1_column_10 > div > button.el-button.el-button--danger.el-button--small').click()
+
+    # 设置->自定义时间模板->删除->确定按钮
+    time.sleep(1)
+    driver.find_element_by_css_selector('body > div.el-message-box__wrapper > div > div.el-message-box__btns > button.el-button.el-button--default.el-button--primary').click()
+
+    # 左上角的返回
+    time.sleep(2)
+    driver.find_element_by_css_selector('#app > nav > div.header > a').click()
+
+    click_service_btn()
+
+
+# top bar
+def app_service_service_config21():
     # time.sleep(2)
     # driver.find_element_by_css_selector('#head-icon').send_keys('/Users/chenwei/Desktop/mac_ip.png')
 
@@ -1151,16 +1513,17 @@ def app_service_service_config20():
 
 
 # 论坛
-def app_service_service_config21():
-    pass
-
-# 会员
 def app_service_service_config22():
     pass
 
 
-# 互动直播
+# 会员
 def app_service_service_config23():
+    pass
+
+
+# 互动直播
+def app_service_service_config24():
     # app_logo
     # time.sleep(2)
     # driver.find_element_by_id('update_file').send_keys('/Users/chenwei/Desktop/mac_ip.png')
@@ -1242,19 +1605,29 @@ def app_service_service_config23():
     time.sleep(1)
     click_service_btn()
 
+
 # 商品
-def app_service_service_config24():
-    pass
-
-
-# orders
 def app_service_service_config25():
     pass
 
 
-# edu_admin
+# orders
 def app_service_service_config26():
+    pass
+
+
+# edu_admin
+def app_service_service_config27():
     alert_accept()
+    time.sleep(1)
+    click_service_btn()
+
+
+# race
+def app_service_service_config28():
+    alert_accept()
+    time.sleep(1)
+    click_service_btn()
 
 
 # "我的应用"->"服务"->"开启服务"(有的开了,有的没开)
@@ -1348,6 +1721,10 @@ def echo_tab():
 
 
 if __name__ == "__main__":
+    commonfunc = CommonFuncs()
+    if not commonfunc.check_file_exists('PhoneNum.txt'):
+        commonfunc.write_file('PhoneNum.txt', '13900000000')
+
     start_time = get_current_time()
     open_firefox()
     end_time = get_current_time()
