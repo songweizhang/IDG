@@ -1,0 +1,225 @@
+1490600309253	geckodriver	INFO	Listening on 127.0.0.1:55811
+1490600310307	mozprofile::profile	INFO	Using profile path /var/folders/73/s3dtf4955qg17clz0t0s75rm0000gn/T/rust_mozprofile.dG82PrQkyjNq
+1490600310309	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1490600310311	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55820
+1490600311181	Marionette	INFO	Listening on port 55820
+1490600311560	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-03-27 15:38:33.854 plugin-container[40446:723149] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x912f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-03-27 15:38:33.855 plugin-container[40446:723149] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9603, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1490600325576	Marionette	INFO	New connections will no longer be accepted
+[Child 40446] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+[Child 40446] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2143
+1490600353589	geckodriver	INFO	Listening on 127.0.0.1:55883
+1490600354649	mozprofile::profile	INFO	Using profile path /var/folders/73/s3dtf4955qg17clz0t0s75rm0000gn/T/rust_mozprofile.BiHFQAv2aNe5
+1490600354650	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1490600354653	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55892
+1490600355406	Marionette	INFO	Listening on port 55892
+1490600355811	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-03-27 15:39:17.967 plugin-container[40487:724125] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x902f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-03-27 15:39:17.968 plugin-container[40487:724125] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9303, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1490600519200	geckodriver	INFO	Listening on 127.0.0.1:55977
+1490600520256	mozprofile::profile	INFO	Using profile path /var/folders/73/s3dtf4955qg17clz0t0s75rm0000gn/T/rust_mozprofile.kLFUbdCqVF2j
+1490600520257	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1490600520259	geckodriver::marionette	INFO	Connecting to Marionette on localhost:55988
+1490600521160	Marionette	INFO	Listening on port 55988
+1490600521521	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-03-27 15:42:03.614 plugin-container[40573:725216] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x903b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-03-27 15:42:03.616 plugin-container[40573:725216] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9303, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+1490600789402	geckodriver	INFO	Listening on 127.0.0.1:56097
+1490600790461	mozprofile::profile	INFO	Using profile path /var/folders/73/s3dtf4955qg17clz0t0s75rm0000gn/T/rust_mozprofile.r16gSklZb2T3
+1490600790462	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1490600790465	geckodriver::marionette	INFO	Connecting to Marionette on localhost:56106
+1490600791381	Marionette	INFO	Listening on port 56106
+1490600791750	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-03-27 15:46:33.353 plugin-container[40700:726989] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x902f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-03-27 15:46:33.355 plugin-container[40700:726989] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9403, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=web%27d&json=1&p=3&sid=1444_19035_21108&csor=5&pwd=we%27b&cb=jQuery110208531093969126731_1490600794830&_=1490600794836, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=we%27b%27drive&json=1&p=3&sid=1444_19035_21108&csor=10&pwd=we%27b%27d%27r%27iv&cb=jQuery110208531093969126731_1490600794830&_=1490600794840, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=we%27b%27d%27r%27iv&json=1&p=3&sid=1444_19035_21108&csor=11&pwd=we%27b%27d%27ri&cb=jQuery110208531093969126731_1490600794830&_=1490600794839, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=webdriverda%27ka&json=1&p=3&sid=1444_19035_21108&csor=14&pwd=webdriverda%27k&cb=jQuery110208531093969126731_1490600794830&_=1490600794846, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=webdriver%E6%89%93%E5%BC%80xin%27biao%27qian&json=1&p=3&sid=1444_19035_21108&csor=24&pwd=webdriver%E6%89%93%E5%BC%80xin%27biao%27qia&cb=jQuery110208531093969126731_1490600794830&_=1490600794859, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=webdriver%E6%89%93%E5%BC%80xin%27biao&json=1&p=3&sid=1444_19035_21108&csor=19&pwd=webdriver%E6%89%93%E5%BC%80xin%27bia&cb=jQuery110208531093969126731_1490600794830&_=1490600794855, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript warning: http://www.wang1314.net/doc/js/jquery-1.4.2.js, line 3686: unreachable code after return statement
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=Pythonwebdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&json=1&p=3&sid=1444_19035_21108&bs=webdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&pbs=webdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&csor=6&pwd=pythonwebdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&cb=jQuery110208531093969126731_1490600794830&_=1490600794870, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=Python%20webdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&json=1&p=3&sid=1444_19035_21108&bs=webdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&pbs=webdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&csor=7&pwd=Pythonwebdriver%E6%89%93%E5%BC%80%E6%96%B0%E6%A0%87%E7%AD%BE&cb=jQuery110208531093969126731_1490600794830&_=1490600794871, line 1: TypeError: jQuery110208531093969126731_1490600794830 is not a function
+JavaScript warning: https://pos.baidu.com/tcqm?mpdi=227509&rtbid=1972219&rdid=9223372032564532863&dc=2&di=968278&dri=0&dis=0&dai=3&ps=628x915&dcb=___adblockplus&dtm=HTML_POST&dvi=0.0&dci=-1&dpt=none&tsr=0&tpr=1490600969759&cop=zdclassid%3D1073%26zhidaoqid%3D425715949235207852%26zdquery%3DPython%2520webdriver%25E6%2589%2593%25E5%25BC%2580%25E6%2596%25B0%25E6%25A0%2587%25E7%25AD%25BE&ti=python%2Bselenium%E7%82%B9%E5%87%BB%E4%B8%80%E4%B8%AA%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%96%B0%E5%BC%80%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%B0%86%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%84%A6%E7%82%B9%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E6%89%93%E5%BC%80%E7%9A%84%E8%BF%99%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8A%EF%BC%9F_%E7%99%BE%E5%BA%A6%E7%9F%A5%E9%81%93&ari=2&dbv=0&drs=3&pcs=1280x600&pss=1280x2048&cfv=0&cpl=1&chi=1&cce=true&cec=gbk&tlm=1490600976&prot=2&rw=600&ltu=https%3A%2F%2Fzhidao.baidu.com%2Fquestion%2F425715949235207852.html&ltr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Duce_yjMdcZZh0eoCNRPWXNSVgxHP_nDusLUjvUwiStY1CLMFVMhzZLm_BnMeN8nijTQVuJ3O08Kn_150ZRBx4TFZHQO_4pI7UJ3imlG4wuW%26wd%3D%26eqid%3D8f9b838a000040b30000000558d8c3f9&ecd=1&uc=1280x702&pis=-1x-1&ccd=24&cja=false&cmi=2&col=zh-CN&cdo=-1&sr=1280x800&tcn=1490600977&qn=6bdd0b6750c6c926&dpv=6bdd0b6750c6c926&tt=1490600969725.6794.8413.8414, line 82: unreachable code after return statement
+JavaScript warning: https://pos.baidu.com/tcqm?mpdi=227509&rtbid=1972219&rdid=9223372032564532863&dc=2&di=968278&dri=0&dis=0&dai=3&ps=628x915&dcb=___adblockplus&dtm=HTML_POST&dvi=0.0&dci=-1&dpt=none&tsr=0&tpr=1490600969759&cop=zdclassid%3D1073%26zhidaoqid%3D425715949235207852%26zdquery%3DPython%2520webdriver%25E6%2589%2593%25E5%25BC%2580%25E6%2596%25B0%25E6%25A0%2587%25E7%25AD%25BE&ti=python%2Bselenium%E7%82%B9%E5%87%BB%E4%B8%80%E4%B8%AA%E9%93%BE%E6%8E%A5%EF%BC%8C%E6%96%B0%E5%BC%80%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%EF%BC%8C%E6%80%8E%E6%A0%B7%E5%B0%86%E4%B8%8B%E4%B8%80%E6%AD%A5%E7%84%A6%E7%82%B9%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E6%89%93%E5%BC%80%E7%9A%84%E8%BF%99%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B8%8A%EF%BC%9F_%E7%99%BE%E5%BA%A6%E7%9F%A5%E9%81%93&ari=2&dbv=0&drs=3&pcs=1280x600&pss=1280x2048&cfv=0&cpl=1&chi=1&cce=true&cec=gbk&tlm=1490600976&prot=2&rw=600&ltu=https%3A%2F%2Fzhidao.baidu.com%2Fquestion%2F425715949235207852.html&ltr=https%3A%2F%2Fwww.baidu.com%2Flink%3Furl%3Duce_yjMdcZZh0eoCNRPWXNSVgxHP_nDusLUjvUwiStY1CLMFVMhzZLm_BnMeN8nijTQVuJ3O08Kn_150ZRBx4TFZHQO_4pI7UJ3imlG4wuW%26wd%3D%26eqid%3D8f9b838a000040b30000000558d8c3f9&ecd=1&uc=1280x702&pis=-1x-1&ccd=24&cja=false&cmi=2&col=zh-CN&cdo=-1&sr=1280x800&tcn=1490600977&qn=6bdd0b6750c6c926&dpv=6bdd0b6750c6c926&tt=1490600969725.6794.8413.8414, line 82: unreachable code after return statement
+JavaScript error: https://ss1.baidu.com/9rA4cT8aBw9FktbgoI7O1ygwehsv/static/api/js/trans/logger.js?v=d16ec0e3.js, line 1: TypeError: n.ajax.request is not a function
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+1490664596930	geckodriver	INFO	Listening on 127.0.0.1:58279
+1490664598004	mozprofile::profile	INFO	Using profile path /var/folders/73/s3dtf4955qg17clz0t0s75rm0000gn/T/rust_mozprofile.qwE0PwKynxFb
+1490664598005	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin with args []
+1490664598009	geckodriver::marionette	INFO	Connecting to Marionette on localhost:58288
+1490664598822	Marionette	INFO	Listening on port 58288
+1490664599161	Marionette	WARN	TLS certificate errors will be ignored for this session
+2017-03-28 09:30:00.767 plugin-container[46469:817001] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x903b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2017-03-28 09:30:00.771 plugin-container[46469:817001] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x9303, name = 'com.apple.CFPasteboardClient'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js, line 4: ReferenceError: c is not defined
+*************************
+A coding exception was thrown and uncaught in a Task.
+
+Full message: TypeError: NetworkError when attempting to fetch resource.
+Full stack: 
+*************************
+JavaScript warning: http://www.cmbchina.com/pbankweb/Scripts/jquery-1.9.1.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
+JavaScript error: http://idg-preprod.tunnel.nibaguai.com/admin/static/js/bxslider.js, line 225: TypeError: e.originalEvent.touches is undefined
